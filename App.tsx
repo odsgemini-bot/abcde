@@ -15,7 +15,7 @@ const App: React.FC = () => {
   useEffect(() => {
     const handleScroll = () => {
       const sections = ['home', 'about', 'skills', 'achievements', 'career', 'contact'];
-      const scrollPosition = window.scrollY + 100;
+      const scrollPosition = window.scrollY + 120;
 
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -34,40 +34,22 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen">
-      {/* Background Decorative Elements */}
+    <div className="relative min-h-screen selection:bg-amber-500/30">
+      {/* Background Ambience */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-0 -left-4 w-72 h-72 bg-violet-900/20 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
-        <div className="absolute top-0 -right-4 w-72 h-72 bg-purple-900/20 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
-        <div className="absolute -bottom-8 left-20 w-72 h-72 bg-indigo-900/20 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
+        <div className="absolute top-[-10%] left-[-5%] w-[40%] h-[40%] bg-violet-900/10 rounded-full blur-[120px] animate-soft-pulse"></div>
+        <div className="absolute bottom-[10%] right-[-5%] w-[30%] h-[30%] bg-amber-900/10 rounded-full blur-[100px] animate-soft-pulse" style={{ animationDelay: '1s' }}></div>
       </div>
 
       <Header activeSection={activeSection} />
       
       <main className="relative z-10">
-        <section id="home">
-          <Hero />
-        </section>
-        
-        <section id="about" className="py-24 md:py-32">
-          <About />
-        </section>
-
-        <section id="skills" className="py-24 md:py-32 bg-slate-900/50">
-          <Skills />
-        </section>
-
-        <section id="achievements" className="py-24 md:py-32">
-          <Achievements />
-        </section>
-
-        <section id="career" className="py-24 md:py-32 bg-slate-900/50">
-          <Career />
-        </section>
-
-        <section id="contact" className="py-24 md:py-32">
-          <Contact />
-        </section>
+        <section id="home"><Hero /></section>
+        <section id="about" className="py-24 md:py-40"><About /></section>
+        <section id="skills" className="py-24 md:py-40 bg-slate-900/20"><Skills /></section>
+        <section id="achievements" className="py-24 md:py-40"><Achievements /></section>
+        <section id="career" className="py-24 md:py-40 bg-slate-900/20"><Career /></section>
+        <section id="contact" className="py-24 md:py-40"><Contact /></section>
       </main>
 
       <Footer />
