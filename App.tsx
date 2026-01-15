@@ -34,7 +34,7 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen selection:bg-amber-500/30">
+    <div className="relative min-h-screen selection:bg-amber-500/30 overflow-x-hidden">
       {/* Background Ambience */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
         <div className="absolute top-[-10%] left-[-5%] w-[40%] h-[40%] bg-violet-900/10 rounded-full blur-[120px] animate-soft-pulse"></div>
