@@ -31,18 +31,23 @@
             animation: soft-pulse 4s ease-in-out infinite;
         }
     </style>
-<script type="importmap">
+    <!-- Import map은 로컬 개발 환경 호환성을 위해 유지하되, 빌드 도구는 package.json을 우선 사용합니다. -->
+    <script type="importmap">
 {
   "imports": {
     "react": "https://esm.sh/react@^19.2.3",
     "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
     "react/": "https://esm.sh/react@^19.2.3/",
-    "lucide-react": "https://esm.sh/lucide-react@0.460.0"
+    "lucide-react": "https://esm.sh/lucide-react@0.460.0",
+    "vite": "https://esm.sh/vite@^7.3.1",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
   }
 }
 </script>
 </head>
 <body class="text-slate-300 selection:bg-violet-500/30">
     <div id="root"></div>
+    <!-- Vite와 같은 번들러가 인식하는 명시적 진입점 스크립트 -->
+    <script type="module" src="/index.tsx"></script>
 </body>
 </html>
